@@ -1,7 +1,14 @@
 import React from 'react';
+import Navbar from '../Components/Homepage/Navbar/Navbar';
+import AuctionMain from '../Components/Auction/AuctionMainPage/AuctionMain';
 
 const Auctionpage = () => {
-  return <h1>Auction Page</h1>;
+  return (
+  <>
+    <Navbar />
+    <AuctionMain/>
+  </>
+  );
 };
 
 export default Auctionpage;
