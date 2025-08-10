@@ -1,0 +1,123 @@
+:root{
+    --PrimaryColor: hsl(210, 100%, 33%);
+    --SecondaryColor: #FFAA85;
+    --gradientColor: linear-gradient(to right, hsl(210, 100%, 33%), hsl(187, 85%, 45%));
+    --whiteColor: #F0EFEF;
+    --blackColor: #252525;
+    --textColor: hsl(240, 4%, 36%);
+    --whiteColorDeam: hsl(0, 0%, 93%);
+    --greyText: rgb(190, 190, 190);
+    --inputColor: rgb(239, 239, 239);
+    --bodyColor: #123458;
+    --cardBG: rgb(225, 225, 225);
+}
+
+.members-container{
+    background-color: var(--whiteColor);
+    height: 100%;
+    margin: 0;
+    font-family: 'Inter', Arial, sans-serif;
+    padding: 5px;
+}
+
+.members-title{
+    text-align: center;
+    font-weight: 700;
+    font-size: 2.1rem;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+    color: var(--blackColor);
+}
+
+.members-desc{
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding: 0 50px;
+    margin-bottom: 45px;
+    color: var(--blackColor);
+}
+
+.members-list{
+    display: flex;
+    justify-content: center;
+    gap: 10rem;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.member-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.member-avatar{
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background-color: #FFAA85;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 24px rgba(255, 170, 133, 0.207);
+}
+
+.member-name{
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: var(--blackColor);
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.member-id{
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--blackColor);
+    text-align: center;
+    letter-spacing: 1px;
+    margin-top: 2px;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 900px) {
+  .members-list {
+    gap: 32px;
+  }
+  .member-avatar {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .members-inner {
+    border-radius: 0 0 16px 16px / 0 0 8px 8px;
+    padding: 20px 4vw 32px 4vw;
+  }
+  .members-title {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+  .members-desc {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  .members-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+  }
+  .member-avatar {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 12px;
+  }
+  .member-name {
+    font-size: 1rem;
+  }
+  .member-id {
+    font-size: 0.92rem;
+  }
+}
