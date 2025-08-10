@@ -1,0 +1,452 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sora:wght@100..800&family=Yaldevi:wght@200..700&display=swap');
+
+:root {
+  --PrimaryColor: hsl(210, 100%, 33%);
+  --SecondaryColor: #FFAA85;
+  --gradientColor: linear-gradient(to right, #FFFFFF, #CCCCCC);
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(201, 33%, 16%);
+  --textColor: hsl(240, 4%, 36%);
+  --whiteColorDeam: hsl(0, 0%, 93%);
+  --greyText: rgb(190, 190, 190);
+  --inputColor: rgb(239, 239, 239);
+  --bodyColor: #123458;
+  --cardBG: rgb(225, 225, 225);
+  --fontMain: 'Poppins', sans-serif;
+}
+
+.flight-auction-app {
+  background-color: var(--bodyColor); /* Keep this as a fallback color */
+  font-family: 'Outfit', sans-serif;
+
+  /* --- Background Image Properties --- */
+  background-image: url('../../../Images/airlinebackground.png'); /* Replace with your image path */
+  background-size: cover; /* Ensures the image covers the entire element */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-attachment: fixed; /* Makes the background fixed while scrolling */
+  /* ---------------------------------- */
+}
+
+.flight-app-header h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 28px;
+  padding-top: 10rem;
+  letter-spacing: 1px;
+
+  /* Gradient Text Styling */
+  background: linear-gradient(to right, #FFFFFF, #CCCCCC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Fallbacks for other browsers */
+  background-clip: text;
+  color: transparent;
+}
+
+.nav-icons {
+  display: flex;
+  justify-content: center;
+  gap: 6rem;
+  width: 100%;
+}
+
+.icon-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #a1c0dd66;
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 20px;
+  width: 9rem;
+  height: 9rem;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  transition: background 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  box-shadow: 0 3px 16px rgba(30, 50, 90, 0.09);
+}
+
+.icon-btn span {
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.icon-btn.active,
+.icon-btn:hover {
+  background: #17253de5;
+  color: #fff;
+  box-shadow: 0 8px 32px rgba(30, 50, 90, 0.13);
+  font-weight: bold;
+}
+
+/* Search Section */
+.search-container {
+  width: 58%;
+  height: 50%;
+  margin: 40px auto ;
+  background-color: #0e2942;
+  padding: 20px;
+  border-radius: 10px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.search-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-input {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.search-input label {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #cbd5e1;
+  font-weight: 500;
+}
+
+.search-input input {
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  border: none;
+  background-color: #d3dce6;
+  font-size: 14px;
+}
+
+.swap-arrow {
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+  color: white;
+  margin-top: 25px;
+  cursor: pointer;
+}
+
+.search-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.searchbtn {
+  background-color: #fca78d;
+  color: #000;
+  border: none;
+  padding: 0.8rem 2.25rem;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.searchbtn:hover {
+  background-color: #fc9473;
+}
+
+.app-main {
+  margin-top: 100px;
+}
+
+.deals-section {
+  background: #fff;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 4px 28px rgba(44, 64, 102, 0.09);
+  padding: 36px 38px 32px 38px;
+  min-height: 400px;
+}
+
+.deals-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 36px;
+}
+
+.deals-header h2 {
+  color: #253a5e;
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+/* Sort Section */
+.sort-section {
+  width: 100%;
+  padding: 1rem 2rem;
+}
+
+.sort-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.sort-title {
+  flex: 1;
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: bold;
+  
+  /* Gradient Text */
+  background: linear-gradient(to right, #437cb8, #123458d6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.sort-by {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--fontMain);
+  font-size: 1rem;
+  color: #1e293b; /* dark gray text */
+}
+
+.sort-by label {
+  font-weight: 500;
+}
+
+/* Select Dropdown Style */
+.sort-by select {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 12px; /* pill shape */
+  background-color: #D9D9D9; /* light gray background */
+  color: #000;
+  font-weight: 500;
+  font-size: 0.95rem;
+  appearance: none;
+  cursor: pointer;
+  outline: none;
+  box-shadow: none;
+  transition: background 0.2s ease;
+}
+
+/* Optional: hover effect */
+.sort-by select:hover {
+  background-color: #d1d5db;
+}
+.sort-by select:focus {
+  background-color: #cbd5e1; /* slightly darker on focus */
+}
+
+.sort-by select option {
+  background-color: #f1f5f9; /* light gray */
+  color: #1f2937;            /* dark text */
+  font-family: var(--fontMain);
+  font-size: 1rem;
+  padding: 10px;            /* Not reliable in all browsers */
+  border-radius: 20px;
+}
+
+/* Deals Section */
+.deals-section {
+  width: 100%;
+  margin: 100px auto 0;
+}
+
+.deals-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: 100%;
+}
+
+.deal-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  width: 100%;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease-in-out;
+}
+
+.deal-card:hover {
+  transform: translateY(-4px);
+}
+
+.deal-card img {
+  width: 200px;
+  height: 150px;
+  object-fit: fill;
+  border-radius: 18px;
+  background-color: #f1f1f1;
+}
+
+.deal-info {
+  flex: 1;
+  margin-left: 15px;
+}
+
+.deal-title {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.deal-details {
+  font-size: 1.5rem;
+  color: #475569;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.deal-time {
+  font-size: 1.2rem;
+  color: var(--blackColor);
+}
+
+.deal-meta {
+  display: flex;
+  gap: 20px;
+  color: #6b7280;
+  font-size: 0.85rem;
+  margin-top: 20px;
+}
+
+.deal-price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--bodyColor);
+  min-width: 80px;
+  text-align: right;
+  gap: 4px;
+}
+
+.deal-price .eth {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.deal-price .duration {
+  font-size: 0.85rem;
+  color: #475569;
+}
+
+.deal-price .date {
+  font-size: 0.85rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.no-deals-message {
+  font-size: 1.2rem;
+  color: #666;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.deal-card.clickable {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.deal-card.clickable:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border: 2px solid #3b82f6;
+}
+
+.deal-card.clickable:hover .deal-title {
+  color: #3b82f6;
+}
+
+.deal-card.clickable:hover .eth {
+  color: #059669;
+  font-weight: 700;
+}
+
+.deal-card.clickable:active {
+  transform: translateY(-2px);
+}
+
+/* Add a subtle animation to the deal images */
+.deal-card.clickable:hover .deal-images {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.deal-images {
+  transition: transform 0.3s ease;
+}
+
+/* Optional: Add a "View Details" indicator on hover */
+.deal-card.clickable::after {
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  background: rgba(59, 130, 246, 0.9);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.deal-card.clickable:hover::after {
+  opacity: 1;
+}
+
+/* Ensure deal-card has relative positioning for the pseudo-element */
+.deal-card {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Button */
+.see-more-btn {
+  margin-top: 2rem;
+  padding: 0.75rem 3.5rem;
+  background: transparent;
+  color: #000000;
+  border: 1px solid #979797;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  transition: background-color 0.3s;
+}
+
+.see-more-btn:hover {
+  background-color: #0b223a;
+  color: #fff;
+}

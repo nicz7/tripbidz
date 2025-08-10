@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sora:wght@100..800&family=Yaldevi:wght@200..700&display=swap');
+
+:root {
+  --PrimaryColor: hsl(210, 100%, 33%);
+  --SecondaryColor: #FFAA85;
+  --gradientColor: linear-gradient(to right, #FFFFFF, #CCCCCC);
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(201, 33%, 16%);
+  --textColor: hsl(240, 4%, 36%);
+  --whiteColorDeam: hsl(0, 0%, 93%);
+  --greyText: rgb(190, 190, 190);
+  --inputColor: rgb(239, 239, 239);
+  --bodyColor: #123458;
+  --cardBG: rgb(225, 225, 225);
+  --fontMain: 'Poppins', sans-serif;
+}
+
+.auction-main-app {
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--bodyColor);
+  font-family: 'Outfit', sans-serif;
+  color: #fff;
+}
+
+.app-header {
+  text-align: center;
+  padding-top: 10rem;
+  margin-bottom: 28px;
+}
+
+.auction-app-header h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+  padding-top: 10rem;
+  margin-bottom: 28px;
+  letter-spacing: 1px;
+  background: linear-gradient(to right, #FFFFFF, #CCCCCC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.app-header p {
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: #c4d7e8;
+  margin-top: 0;
+}
+
+/* --- Auction Navigation --- */
+.auction-nav-integrated {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.auction-nav-integrated .nav-icons {
+  display: flex;
+  justify-content: center;
+  gap: 6rem;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.auction-nav-integrated .icon-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #a1c0dd66;
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 20px;
+  width: 9rem;
+  height: 9rem;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  transition: background 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  box-shadow: 0 3px 16px rgba(30, 50, 90, 0.09);
+}
+
+.auction-nav-integrated .icon-btn span {
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.auction-nav-integrated .icon-btn.active,
+.auction-nav-integrated .icon-btn:hover {
+  background: #17253de5;
+  color: #fff;
+  box-shadow: 0 8px 32px rgba(30, 50, 90, 0.13);
+  font-weight: bold;
+}
+
+/* --- Search Bar Section --- */
+.auction-searchbar-container {
+  background-color: #0e2942;
+  padding: 30px 40px;
+  border-radius: 18px;
+  width: 70%;
+  max-width: 900px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.auction-searchbar-container .search-row {
+  display: flex;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.auction-searchbar-container .search-field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.auction-searchbar-container .auction-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #b5c7e1;
+}
+
+.auction-searchbar-container input,
+.auction-searchbar-container select {
+  padding: 0.7rem 1rem;
+  border-radius: 14px;
+  border: none;
+  background-color: #d3dce6;
+  font-size: 14px;
+  width: 100%;
+  outline: none;
+}
+
+.auction-searchbar-container .auction-date-group {
+  display: flex;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.auction-searchbar-container .auction-date-field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.auction-search-btn {
+  width: 150px;
+  background-color: #fca78d;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  padding: 0.75rem 2rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  justify-content: center;
+}
+
+.auction-search-btn:hover {
+  background-color: #f7a57c;
+}
+
+/* --- Deals Section --- */
+.auction-deals-section {
+  background: #fff;
+  margin: 5rem auto 0;
+  width: 100%;
+  box-shadow: 0 4px 28px rgba(44, 64, 102, 0.09);
+  padding: 36px 38px 32px 38px;
+  min-height: 400px;
+  color: #1e293b;
+}
+
+.auction-sort-section {
+  width: 100%;
+  padding: 1rem 2rem;
+}
+
+.auction-sort-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.auction-sort-title {
+  flex: 1;
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #437cb8, #123458d6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.auction-subtitle {
+  font-size: 1.1rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.auction-sort-by {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--fontMain);
+  font-size: 1rem;
+  color: #1e293b;
+}
+
+.auction-sort-by select {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 12px;
+  background-color: #D9D9D9;
+  color: #000;
+  font-weight: 500;
+  font-size: 0.95rem;
+  appearance: none;
+  cursor: pointer;
+  outline: none;
+  box-shadow: none;
+  transition: background 0.2s ease;
+}
+
+/* --- Deals Grid --- */
+.auction-deals-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem auto;
+  width: 100%;
+}
+
+.auction-deal-card {
+  width: 460px;
+  height: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.auction-deal-card:hover {
+  transform: translateY(-2px);
+  border: 2px solid #3b82f6;
+}
+
+.auction-deal-img {
+  width: 100%;
+  height: 300px;
+  object-fit: fill;
+  background-color: #fff;
+}
+
+.auction-category-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: #123458d6;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.auction-deal-info {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  gap: 0.75rem;
+}
+
+.auction-deal-title {
+  font-weight: 700;
+  color: #1e293b;
+  font-size: 1.5rem;
+  padding: 20px 20px 0 20px;
+  transition: color 0.3s ease;
+}
+
+.auction-deal-card:hover .auction-deal-title {
+  color: #3b82f6;
+}
+
+.auction-deal-location,
+.auction-deal-dates {
+  font-size: 0.9rem;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 20px;
+}
+
+.auction-icon-text {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+}
+
+.auction-deal-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  color: #64748b;
+  padding: 0 20px;
+}
+
+.auction-deal-price {
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #0e2942;
+  text-align: center;
+  transition: color 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.auction-deal-card:hover .auction-deal-price {
+  color: #059669;
+  font-weight: 700;
+}
+
+.no-deals-message {
+  font-size: 1.2rem;
+  color: #666;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.auction-see-more-btn {
+  margin-top: 2rem;
+  padding: 0.75rem 3.5rem;
+  background: transparent;
+  color: #000;
+  border: 1px solid #979797;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  transition: background-color 0.3s;
+}
+
+.auction-see-more-btn:hover {
+  background-color: #0b223a;
+  color: #fff;
+}
+
