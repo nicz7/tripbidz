@@ -1,7 +1,14 @@
 import React from 'react';
+import Navbar from '../Components/Homepage/Navbar/Navbar'
+import UserProfile from '../Components/Profile/UserProfile/UserProfile'
 
 const Profilepage = () => {
-  return <h1>Profile Page</h1>;
+  return (
+    <>
+      <Navbar />
+      <UserProfile />
+    </>
+  )
 };
 
 export default Profilepage;
