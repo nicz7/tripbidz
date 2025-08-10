@@ -1,12 +1,12 @@
 import React from 'react';
 import Navbar from '../Components/Homepage/Navbar/Navbar';
-import Itinerary from '../Components/Itinerary/Itinerary';
+import ChatWindow from '../Components/Itinerary/ChatWindow';
 
 const Itinerarypage = () => {
   return (
     <>
-      
-      <Itinerary />
+      <Navbar />
+      <ChatWindow />
     </>
   );
 };
