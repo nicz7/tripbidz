@@ -1,0 +1,589 @@
+/* Page Layout */
+.flight-auctions-page {
+  padding: 0;
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+/* Header Styles */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 40px 48px 32px 48px; /* Increased padding */
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+  margin-left: 0;
+}
+
+.header-title h1 {
+  font-size: 32px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 4px 0;
+  letter-spacing: -0.025em;
+}
+
+.header-title p {
+  font-size: 16px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Enhanced Search Input */
+.search-container {
+  position: relative;
+  width: 320px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  z-index: 1;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 16px 12px 48px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 14px;
+  background: #f9fafb;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: #3b82f6;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.search-input::placeholder {
+  color: #9ca3af;
+}
+
+/* Enhanced Filter Button */
+.filter-dropdown {
+  position: relative;
+}
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: white;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 12px;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  min-width: 100px;
+}
+
+.filter-btn:hover {
+  border-color: #d1d5db;
+  background: #f9fafb;
+}
+
+.filter-btn.active {
+  border-color: #3b82f6;
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.filter-count {
+  background: #ef4444;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 10px;
+  min-width: 18px;
+  text-align: center;
+}
+
+.chevron {
+  transition: transform 0.2s ease;
+}
+
+.chevron.rotated {
+  transform: rotate(180deg);
+}
+
+/* Filter Dropdown Menu */
+.filter-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  padding: 20px;
+  min-width: 280px;
+  z-index: 50;
+}
+
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.filter-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+.clear-all-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  color: #dc2626;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.clear-all-btn:hover {
+  background: #fee2e2;
+  border-color: #fca5a5;
+}
+
+.filter-section {
+  margin-bottom: 20px;
+}
+
+.filter-section:last-child {
+  margin-bottom: 0;
+}
+
+.filter-section h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  margin: 0 0 12px 0;
+  text-transform: capitalize;
+}
+
+.filter-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filter-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  padding: 4px 0;
+}
+
+.filter-option input[type="checkbox"] {
+  display: none;
+}
+
+.checkmark {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #d1d5db;
+  border-radius: 4px;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.filter-option input[type="checkbox"]:checked + .checkmark {
+  background: #3b82f6;
+  border-color: #3b82f6;
+}
+
+.filter-option input[type="checkbox"]:checked + .checkmark::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.option-text {
+  font-size: 14px;
+  color: #374151;
+  user-select: none;
+}
+
+/* Create Auction Button */
+.create-auction-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: #1f2937;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.create-auction-btn:hover {
+  background: #111827;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Enhanced Table Styles with Better Padding */
+.table-container {
+  margin: 32px 48px 0 48px; /* Increased margins */
+  background: white;
+  overflow-x: auto;
+  border-radius: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f3f4f6;
+}
+
+.flight-auctions-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-spacing: 0;
+}
+
+/* Enhanced Table Header with More Space */
+.flight-auctions-table th {
+  background: #f8fafc;
+  padding: 24px 40px; /* Increased from 20px 32px */
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+  color: #374151;
+  border-bottom: 1px solid #e5e7eb;
+  white-space: nowrap;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  font-size: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(8px);
+  line-height: 1.4; /* Added for better text spacing */
+}
+
+/* Enhanced Table Body Cells with More Space */
+.flight-auctions-table td {
+  padding: 32px 40px; /* Increased from 24px 32px */
+  border-bottom: 1px solid #f3f4f6;
+  vertical-align: middle;
+  font-size: 14px;
+  line-height: 1.6; /* Increased line height */
+}
+
+/* First and Last Column Extra Padding */
+.flight-auctions-table th:first-child,
+.flight-auctions-table td:first-child {
+  padding-left: 48px; /* Increased from 40px */
+}
+
+.flight-auctions-table th:last-child,
+.flight-auctions-table td:last-child {
+  padding-right: 48px; /* Increased from 40px */
+}
+
+/* Enhanced Row Hover Effect */
+.flight-auctions-table tbody tr {
+  transition: all 0.2s ease;
+  border-radius: 0;
+  height: 80px; /* Added minimum row height */
+}
+
+.flight-auctions-table tbody tr:hover {
+  background: #f9fafb;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Enhanced Table Row Spacing */
+.flight-auctions-table tbody tr + tr td {
+  border-top: 1px solid #f9fafb;
+}
+
+/* Enhanced Cell Content with Better Spacing */
+.route-text,
+.airline-text,
+.date-text,
+.seats-text,
+.bid-amount,
+.bids-count,
+.time-left {
+  display: block;
+  padding: 6px 0; /* Increased from 4px 0 */
+}
+
+/* Enhanced Route Cell */
+.route-text {
+  font-weight: 600;
+  font-size: 16px; /* Increased from 15px */
+  color: #111827;
+  margin-bottom: 4px; /* Increased from 2px */
+  line-height: 1.3;
+}
+
+/* Enhanced Airline Text */
+.airline-text {
+  font-size: 14px;
+  color: #374151;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* Enhanced Date Text */
+.date-text {
+  font-size: 14px;
+  color: #374151;
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  line-height: 1.4;
+}
+
+.seats-text {
+  font-size: 14px;
+  color: #374151;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Enhanced Bid Amount */
+.bid-amount {
+  font-weight: 700;
+  font-size: 16px; /* Increased from 15px */
+  color: #059669;
+  letter-spacing: -0.025em;
+  line-height: 1.3;
+}
+
+.bids-count {
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.4;
+}
+
+/* Enhanced Time Left */
+.time-left {
+  font-size: 14px;
+  color: #6b7280;
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* Enhanced Class Badges with Better Spacing */
+.class-badge {
+  padding: 10px 18px; /* Increased from 8px 16px */
+  border-radius: 24px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+  white-space: nowrap;
+  letter-spacing: 0.025em;
+  margin: 6px 0; /* Increased from 4px 0 */
+  display: inline-block;
+  line-height: 1;
+}
+
+.class-badge.business {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.class-badge.first {
+  background: #fdf2f8;
+  color: #be185d;
+}
+
+.class-badge.premium-economy {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.class-badge.economy {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+/* Enhanced Status Badges with Better Spacing */
+.status-badge {
+  padding: 10px 18px; /* Increased from 8px 16px */
+  border-radius: 24px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+  white-space: nowrap;
+  letter-spacing: 0.025em;
+  margin: 6px 0; /* Increased from 4px 0 */
+  display: inline-block;
+  line-height: 1;
+}
+
+.status-badge.active {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.status-badge.ending-soon {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* Status Badge Container with More Space */
+.status-badge-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 40px; /* Increased from 32px */
+}
+
+/* Enhanced Action Buttons with More Space */
+.action-buttons {
+  display: flex;
+  gap: 16px; /* Increased from 12px */
+  justify-content: center;
+  padding: 8px 0; /* Increased from 4px 0 */
+}
+
+.action-btn {
+  padding: 12px; /* Increased from 10px */
+  border: 1px solid #e5e7eb;
+  background: white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; /* Increased from default */
+  height: 40px; /* Increased from default */
+}
+
+.action-btn:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+  color: #374151;
+  transform: translateY(-1px);
+}
+
+.view-btn:hover {
+  background: #eff6ff;
+  border-color: #93c5fd;
+  color: #1d4ed8;
+}
+
+.settings-btn:hover {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+  color: #374151;
+}
+
+/* Cell Content Alignment */
+.flight-auctions-table td:nth-child(5),
+.flight-auctions-table td:nth-child(7),
+.flight-auctions-table th:nth-child(5),
+.flight-auctions-table th:nth-child(7) {
+  text-align: center;
+}
+
+.flight-auctions-table td:nth-child(6),
+.flight-auctions-table th:nth-child(6) {
+  text-align: right;
+  padding-right: 40px;
+}
+
+/* Compact Padding Option */
+.flight-auctions-table.compact th {
+  padding: 16px 24px;
+}
+
+.flight-auctions-table.compact td {
+  padding: 18px 24px;
+}
+
+.flight-auctions-table.compact th:first-child,
+.flight-auctions-table.compact td:first-child {
+  padding-left: 32px;
+}
+
+.flight-auctions-table.compact th:last-child,
+.flight-auctions-table.compact td:last-child {
+  padding-right: 32px;
+}
+
+/* Spacious Padding Option */
+.flight-auctions-table.spacious th {
+  padding: 24px 40px;
+}
+
+.flight-auctions-table.spacious td {
+  padding: 28px 40px;
+}
+
+.flight-auctions-table.spacious th:first-child,
+.flight-auctions-table.spacious td:first-child {
+  padding-left: 48px;
+}
+
+.flight-auctions-table.spacious th:last-child,
+.flight-auctions-table.spacious td:last-child {
+  padding-right: 48px;
+}
+
+/* Padding Mode Selector */
+.padding-selector {
+  padding: 12px 16px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 12px;
+  background: white;
+  color: #374151;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.padding-selector:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.padding-selector:hover {
+  border-color: #d1d5db;
+}
+

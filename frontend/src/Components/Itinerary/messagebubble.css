@@ -1,0 +1,149 @@
+.message-row {
+  display: flex;
+  align-items: flex-start;
+  margin-left: 10px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  max-width: 98%;
+}
+
+.message-row.bot {
+  justify-content: flex-start;
+}
+
+.message-row.user {
+  justify-content: flex-end;
+}
+
+.message-bubble {
+  max-width: 80%;
+  padding: 0.8rem 1rem;
+  border-radius: 16px;
+  font-size: 0.95rem;
+  word-wrap: break-word;
+  display: inline-block;
+  line-height: 1.5;
+  margin-top: 0.8rem;
+}
+
+.message-bubble.bot {
+  background-color: #2c2c2c;
+  color: #ffb996;
+  border-top-left-radius: 0;
+  margin-left: 0.8rem;
+}
+
+.message-bubble.user {
+  background-color: #f9b99d;
+  color: #222;
+  border-top-right-radius: 0;
+  margin-right: 0.8rem;
+}
+
+.avatar-circle {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: #F0EFEF;
+  border: 1px solid #f9b99d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+  color: #d05f1d;
+  flex-shrink: 0;
+}
+
+.bot-avatar {
+  background-color: #2c2c2c;
+  color: #ffb996;
+  border: none;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+.chat-row {
+  display: flex;
+  align-items: flex-start;
+  margin-left: 10px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  max-width: 98%;
+}
+
+.chat-row.chat-bot {
+  justify-content: flex-start;
+}
+
+.chat-row.chat-user{
+  justify-content: flex-end;
+}
+
+.chat-bubble {
+  max-width: 80%;
+  padding: 0.8rem 1rem;
+  border-radius: 16px;
+  font-size: 0.95rem;
+  word-wrap: break-word;
+  display: inline-block;
+  line-height: 1.5;
+  margin-top: 0.8rem;
+}
+
+.chat-bubble.chat-bubble-bot {
+  background-color: #2c2c2c;
+  color: #ffb996;
+  border-top-left-radius: 0;
+  margin-left: 0.8rem;
+}
+
+.chat-bubble.chat-bubble-user {
+  background-color: #f9b99d;
+  color: #222;
+  border-top-right-radius: 0;
+  margin-right: 0.8rem;
+}
+
+.chat-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: #F0EFEF;
+  border: 1px solid #f9b99d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+  color: #d05f1d;
+  flex-shrink: 0;
+}
+
+.chat-avatar.chat-avatar-bot {
+  background-color: #2c2c2c;
+  color: #ffb996;
+  border: none;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+.chat-avatar.chat-avatar-user {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #f0efef;
+  border: 2px solid #FFAA85;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 500;
+  color: #222;
+  /* Orange text with black outline */
+  text-shadow:
+    -1px -1px 0 #FFAA85,
+     1px -1px 0 #FFAA85,
+    -1px  1px 0 #FFAA85,
+     1px  1px 0 #FFAA85;
+  box-sizing: border-box;
+}
+
