@@ -18,6 +18,7 @@ import TransportationAuction from './Components/Auction/Transportation/Transport
 import TransportationDetails from './Components/Auction/Transportation/TransportationDetails/TransportationDetails';
 import TravelAdminpage from './Pages/admin/TravelAdminpage';
 import AdminLogin from './Components/Admin/AdminLogin/AdminLogin';
+import AdminSignup from './Components/Admin/AdminSignup/AdminSignup';
 import RoleSelection from './Pages/RoleSelection';
 
 import { UserProvider } from './Components/Homepage/UserContext/Usercontext';
@@ -45,6 +46,7 @@ function App() {
                     <Route path="/profile" element={<Profile />} />
 
                     <Route path="/admin/login" element={<AdminLogin />} />
+                    <Route path="/admin/signup" element={<AdminSignup />} />
                     <Route path="/admin/dashboard" element={<TravelAdminpage />} />
                 </Routes>
             </Router>
