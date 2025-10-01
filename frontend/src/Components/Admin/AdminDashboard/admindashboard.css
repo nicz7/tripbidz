@@ -1,0 +1,640 @@
+/* ========================================
+   ADMIN DASHBOARD - CLEANED VERSION
+   ======================================== */
+
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f8fafc;
+  overflow-x: hidden;
+}
+
+/* ========================================
+   SIDEBAR STYLES
+   ======================================== */
+
+.admin-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 100vh;
+  background-color: #123458;
+  z-index: 100; /* Reduced from 9999 to 100 */
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
+  transition: none;
+}
+
+.admin-sidebar-header {
+  padding: 24px 20px;
+  border-bottom: 1px solid #334155;
+}
+
+.admin-sidebar-header h2 {
+  font-size: 26px;
+  font-weight: 600;
+  color: white;
+}
+
+.admin-sidebar-header h2 span {
+  color: #ffaa85;
+}
+
+.admin-sidebar-nav {
+  padding: 16px 0;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 20px;
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.nav-item:hover {
+  background-color: #334155;
+  color: white;
+}
+
+.nav-item.active {
+  background-color: #334155;
+  color: white;
+  border-right: 3px solid #3b82f6;
+}
+
+.nav-item span {
+  font-weight: 500;
+}
+
+/* ========================================
+   MAIN CONTENT
+   ======================================== */
+
+.admin-main-content {
+  flex: 1;
+  margin-left: 260px;
+  padding: 0;
+}
+
+/* ========================================
+   HEADER SECTION
+   ======================================== */
+
+.admin-header {
+  background: white;
+  padding: 20px 32px;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.admin-header h1 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+  flex-shrink: 0; 
+}
+
+.admin-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.admin-search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.admin-search-icon {
+  position: absolute;
+  left: 12px;
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.search-input {
+  padding: 10px 12px 10px 40px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  width: 280px;
+  font-size: 14px;
+  background: white;
+  transition: all 0.2s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.admin-notification-btn {
+  padding: 10px;
+  background: none;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #64748b;
+  transition: all 0.2s ease;
+}
+
+.admin-notification-btn:hover {
+  background-color: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.admin-new-auction-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: #1e293b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.admin-new-auction-btn:hover {
+  background: #334155;
+}
+
+/* User Profile Section Styles */
+.user-profile-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.user-profile-section:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #4f46e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  overflow: hidden;
+}
+
+.avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.username {
+  font-weight: 500;
+  color: #1f2937;
+  font-size: 14px;
+}
+
+.dropdown-icon {
+  color: #6b7280;
+  transition: transform 0.2s ease;
+}
+
+.user-profile-section:hover .dropdown-icon {
+  transform: rotate(180deg);
+}
+
+/* ========================================
+   STATS SECTION
+   ======================================== */
+
+.stats-section {
+  padding: 32px;
+  background: #f8fafc;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.stat-card {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  transition: all 0.2s ease;
+}
+
+.stat-card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+}
+
+.stat-content h3 {
+  font-size: 14px;
+  color: #64748b;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.stat-number {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.stat-change {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.stat-change.positive {
+  color: #10b981;
+}
+
+.stat-change.negative {
+  color: #ef4444;
+}
+
+.stat-icon {
+  padding: 12px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-card:nth-child(1) .stat-icon {
+  background: #dbeafe;
+  color: #3b82f6;
+}
+
+.stat-card:nth-child(2) .stat-icon {
+  background: #d1fae5;
+  color: #10b981;
+}
+
+.stat-card:nth-child(3) .stat-icon {
+  background: #fce7f3;
+  color: #ec4899;
+}
+
+.stat-card:nth-child(4) .stat-icon {
+  background: #fed7aa;
+  color: #f97316;
+}
+
+/* ========================================
+   RECENT AUCTIONS SECTION
+   ======================================== */
+
+.recent-auctions {
+  padding: 0 32px 32px 32px;
+}
+
+.section-header {
+  margin-bottom: 24px;
+}
+
+.section-header h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 4px;
+}
+
+.section-header p {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.auctions-list {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+}
+
+.auction-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #f1f5f9;
+  transition: all 0.2s ease;
+}
+
+.auction-item:last-child {
+  border-bottom: none;
+}
+
+.auction-item:hover {
+  background: #f8fafc;
+}
+
+.auction-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.auction-category {
+  margin-bottom: 4px;
+}
+
+.category-badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.category-badge.flight {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.category-badge.hotel {
+  background: #f3e8ff;
+  color: #7c3aed;
+}
+
+.category-badge.ticket {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.category-badge.transport {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.auction-item h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 4px;
+}
+
+.auction-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.auction-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-badge.active {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.status-badge.ending-soon {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.action-btn {
+  padding: 8px;
+  background: none;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #64748b;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.action-btn:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  color: #1e293b;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+  .admin-sidebar {
+    width: 200px;
+    z-index: 100; /* Keep lower z-index on mobile */
+  }
+  
+  .admin-main-content {
+    margin-left: 200px;
+  }
+  
+  .admin-header {
+    padding: 16px 20px;
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+  }
+  
+  .admin-header-actions {
+    justify-content: space-between;
+  }
+  
+  .search-input {
+    width: 200px;
+  }
+  
+  .stats-section {
+    padding: 20px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .recent-auctions {
+    padding: 0 20px 20px 20px;
+  }
+  
+  /* Ensure modals cover sidebar on mobile */
+  .modal-overlay,
+  .create-auction-overlay,
+  .create-transport-overlay {
+    z-index: 999 !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  
+  .modal-container,
+  .create-auction-content,
+  .create-transport-content {
+    z-index: 1001 !important;
+    position: fixed;
+  }
+}
+
+@media (max-width: 640px) {
+  .admin-sidebar {
+    width: 60px;
+    z-index: 100; /* Keep consistent z-index */
+  }
+  
+  .admin-sidebar-header h2 {
+    display: none;
+  }
+  
+  .nav-item span {
+    display: none;
+  }
+  
+  .nav-item {
+    justify-content: center;
+    padding: 12px;
+  }
+  
+  .admin-main-content {
+    margin-left: 60px;
+  }
+  
+  /* Mobile specific modal positioning */
+  .modal-container,
+  .create-auction-content,
+  .create-transport-content {
+    z-index: 1001 !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    max-width: none;
+    max-height: none;
+    border-radius: 0;
+  }
+}
+
+/* ========================================
+   ADDITIONAL MODAL SAFEGUARDS
+   ======================================== */
+
+/* Ensure any popup/modal/dialog appears above sidebar */
+.popup,
+.dialog,
+.dropdown-menu,
+.tooltip,
+.alert-modal,
+.confirmation-modal {
+  z-index: 1000 !important;
+}
+
+/* Backdrop/overlay for any modal */
+.backdrop,
+.modal-backdrop,
+.overlay {
+  z-index: 999 !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* ========================================
+   PREVENT SIDEBAR INTERACTION WHEN MODAL IS OPEN
+   ======================================== */
+
+/* When modal is open, disable sidebar interactions */
+.modal-open .admin-sidebar {
+  pointer-events: none;
+}
+
+.modal-open .admin-sidebar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+/* Re-enable sidebar when modal is closed */
+.admin-sidebar {
+  pointer-events: auto;
+}
+
+/* ========================================
+   SCROLLBAR ADJUSTMENTS FOR MOBILE MODALS
+   ======================================== */
+
+@media (max-width: 768px) {
+  /* Prevent body scroll when modal is open */
+  .modal-open {
+    overflow: hidden;
+  }
+  
+  /* Ensure modal content is scrollable */
+  .modal-container,
+  .create-auction-content,
+  .create-transport-content {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+
+
+
+
+
+
+

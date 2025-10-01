@@ -1,0 +1,118 @@
+:root{
+    --PrimaryColor: hsl(210, 100%, 33%);
+    --SecondaryColor: #FFAA85;
+    --gradientColor: linear-gradient(to right, hsl(210, 100%, 33%), hsl(187, 85%, 45%));
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(201, 33%, 16%);
+    --textColor: hsl(240, 4%, 36%);
+    --whiteColorDeam: hsl(0, 0%, 93%);
+    --greyText: rgb(190, 190, 190);
+    --inputColor: rgb(239, 239, 239);
+    --bodyColor: #123458;
+    --cardBG: rgb(225, 225, 225);
+}
+
+.services-outer{
+    background-color: var(--bodyColor);
+    min-height: 100vh;
+    padding: 0;
+    margin: 35px;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+.services-title{
+    text-align: center;
+    font-weight: bold;
+    font-size: 2.2rem;
+    color: #CCCCCC;
+    margin-bottom: 30px;
+}
+
+.services-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 9rem;
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 10px 40px;    
+}
+
+.service-card{
+    flex: 1 1 240px;
+    border-radius: 16px;
+    text-align: center;
+    padding: 16px 12px 32px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.service-label{
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 12px;
+    color: var(--whiteColor);
+    line-height: 1.2;
+    font-family: 'Inter';
+}
+
+.service-desc1 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #CCCCCC;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+.service-desc2{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #CCCCCC;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+.service-desc3{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #CCCCCC;
+    line-height: 1.5;
+    margin-top: 45px;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .services-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 0 4vw;
+  }
+
+  .service-card {
+    max-width: 95vw;
+    padding-bottom: 24px;
+  }
+  .services-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  .service-label {
+    font-size: 1.8rem;
+  }
+  .service-desc1 {
+    font-size: 1.2rem;
+  }
+  .service-desc2{
+    font-size: 1.2rem;
+  }
+  .service-desc3{
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    margin-top: 0;
+  }
+}
+
