@@ -1,0 +1,967 @@
+/* ===== BASE STYLES ===== */
+.hotel-auction-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  line-height: 1.5;
+  color: #1e293b;
+}
+
+/* ===== RESPONSIVE UTILITIES ===== */
+.hotel-desktop-only {
+  display: flex;
+}
+
+.hotel-mobile-only {
+  display: none;
+}
+
+/* ===== HEADER STYLES ===== */
+.hotel-admin-header {
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 24px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  min-height: 80px;
+}
+
+.hotel-header-title h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 4px 0;
+  letter-spacing: -0.025em;
+}
+
+.hotel-header-title p {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+}
+
+/* ===== DESKTOP HEADER ACTIONS ===== */
+.hotel-admin-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.admin-search-container {
+  position: relative;
+  width: 280px;
+}
+
+.admin-search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  z-index: 1;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 16px 12px 48px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 14px;
+  background: #f8fafc;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: #3b82f6;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.search-input::placeholder {
+  color: #94a3b8;
+}
+
+.hotel-admin-new-auction-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: #1e293b;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  min-width: 140px;
+}
+
+.hotel-admin-new-auction-btn:hover {
+  background: #0f172a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.hotel-admin-new-auction-btn:active {
+  transform: translateY(0);
+}
+
+/* ===== MOBILE HEADER ACTIONS ===== */
+.hotel-mobile-header-actions {
+  display: none;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.hotel-mobile-create-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background: #1e293b;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 40px;
+  height: 40px;
+}
+
+.hotel-mobile-create-btn:hover {
+  background: #0f172a;
+  transform: translateY(-1px);
+}
+
+/* ===== MOBILE SEARCH BAR (INSIDE HEADER) ===== */
+.hotel-mobile-search-in-header {
+  display: none;
+  width: 100%;
+  margin-top: 16px;
+}
+
+.hotel-mobile-search-container {
+  position: relative;
+  width: 100%;
+}
+
+.hotel-mobile-search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  z-index: 1;
+}
+
+.hotel-mobile-search-input {
+  width: 100%;
+  padding: 12px 16px 12px 48px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 16px;
+  background: #f8fafc;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.hotel-mobile-search-input:focus {
+  border-color: #3b82f6;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.hotel-mobile-search-input::placeholder {
+  color: #94a3b8;
+}
+
+/* ===== FLOATING ACTION BUTTON ===== */
+.hotel-floating-action-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 60px;
+  height: 60px;
+  background: #1e293b;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.hotel-floating-action-btn:hover {
+  background: #0f172a;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.hotel-floating-action-btn:active {
+  transform: translateY(0);
+}
+
+/* ===== TABLE SECTION ===== */
+.hotel-auctions-table-section {
+  padding: 24px 32px;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.hotel-table-container {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f3f4f6;
+  overflow: hidden;
+  width: 100%;
+}
+
+.hotel-table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+}
+
+.hotel-auctions-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  min-width: 1050px;
+  table-layout: fixed;
+}
+
+/* ===== TABLE HEADERS ===== */
+.hotel-auctions-table thead th {
+  background: #f8fafc;
+  padding: 16px 12px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 11px;
+  color: #374151;
+  border-bottom: 1px solid #e5e7eb;
+  white-space: nowrap;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* ===== TABLE CELLS ===== */
+.hotel-auctions-table tbody td {
+  padding: 16px 12px;
+  border-bottom: 1px solid #f3f4f6;
+  vertical-align: middle;
+  font-size: 13px;
+  text-align: center;
+}
+
+/* ===== OPTIMIZED COLUMN WIDTHS FOR 11 COLUMNS ===== */
+.hotel-auctions-table th:nth-child(1),
+.hotel-auctions-table td:nth-child(1) {
+  width: 85px;
+  min-width: 85px;
+}
+
+.hotel-auctions-table th:nth-child(2),
+.hotel-auctions-table td:nth-child(2) {
+  width: 140px;
+  min-width: 140px;
+}
+
+.hotel-auctions-table th:nth-child(3),
+.hotel-auctions-table td:nth-child(3) {
+  width: 90px;
+  min-width: 90px;
+}
+
+.hotel-auctions-table th:nth-child(4),
+.hotel-auctions-table td:nth-child(4) {
+  width: 85px;
+  min-width: 85px;
+}
+
+.hotel-auctions-table th:nth-child(5),
+.hotel-auctions-table td:nth-child(5) {
+  width: 85px;
+  min-width: 85px;
+}
+
+.hotel-auctions-table th:nth-child(6),
+.hotel-auctions-table td:nth-child(6) {
+  width: 65px;
+  min-width: 65px;
+}
+
+.hotel-auctions-table th:nth-child(7),
+.hotel-auctions-table td:nth-child(7) {
+  width: 60px;
+  min-width: 60px;
+}
+
+.hotel-auctions-table th:nth-child(8),
+.hotel-auctions-table td:nth-child(8) {
+  width: 85px;
+  min-width: 85px;
+}
+
+.hotel-auctions-table th:nth-child(9),
+.hotel-auctions-table td:nth-child(9) {
+  width: 75px;
+  min-width: 75px;
+}
+
+.hotel-auctions-table th:nth-child(10),
+.hotel-auctions-table td:nth-child(10) {
+  width: 75px;
+  min-width: 75px;
+}
+
+.hotel-auctions-table th:nth-child(11),
+.hotel-auctions-table td:nth-child(11) {
+  width: 85px;
+  min-width: 85px;
+}
+
+/* ===== TABLE CONTENT STYLES ===== */
+.hotel-auction-image {
+  width: 70px;
+  height: 55px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.hotel-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hotel-cell strong {
+  font-size: 13px;
+  line-height: 1.3;
+  max-width: 130px;
+  word-wrap: break-word;
+  text-align: center;
+}
+
+.hotel-current-bid {
+  font-weight: 700;
+  font-size: 14px;
+  color: #059669;
+  letter-spacing: -0.025em;
+}
+
+.hotel-status-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.hotel-status-badge.hotel-status-active {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.hotel-action-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.hotel-action-btn {
+  padding: 8px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+
+.hotel-action-btn:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+  color: #374151;
+  transform: translateY(-1px);
+}
+
+.hotel-view-btn:hover {
+  background: #eff6ff;
+  border-color: #93c5fd;
+  color: #1d4ed8;
+}
+
+.hotel-settings-btn:hover {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+  color: #374151;
+}
+
+/* ===== ROW HOVER EFFECTS ===== */
+.hotel-auctions-table tbody tr {
+  transition: all 0.2s ease;
+}
+
+.hotel-auctions-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+/* ===== SCROLLBAR STYLING ===== */
+.hotel-table-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.hotel-table-wrapper::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.hotel-table-wrapper::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.hotel-table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* ===== DESKTOP SPECIFIC RULES ===== */
+@media (min-width: 769px) {
+  .hotel-mobile-only,
+  .hotel-floating-action-btn,
+  .hotel-mobile-search-in-header {
+    display: none !important;
+  }
+  
+  .hotel-desktop-only,
+  .hotel-admin-header-actions {
+    display: flex !important;
+  }
+  
+  .hotel-admin-new-auction-btn {
+    display: flex !important;
+  }
+}
+
+/* ===== RESPONSIVE BREAKPOINTS ===== */
+
+/* Large Desktop (1400px+) */
+@media (min-width: 1400px) {
+  .hotel-admin-header {
+    padding: 32px 48px;
+  }
+  
+  .hotel-auctions-table-section {
+    padding: 32px 48px;
+  }
+  
+  .admin-search-container {
+    width: 320px;
+  }
+  
+  .hotel-header-title h1 {
+    font-size: 32px;
+  }
+  
+  .hotel-header-title p {
+    font-size: 16px;
+  }
+  
+  .hotel-auctions-table {
+    min-width: 1150px;
+  }
+}
+
+/* Desktop (1200px) */
+@media (max-width: 1200px) and (min-width: 769px) {
+  .hotel-admin-header {
+    padding: 24px 32px;
+  }
+  
+  .hotel-auctions-table-section {
+    padding: 24px 32px;
+  }
+  
+  .admin-search-container {
+    width: 240px;
+  }
+  
+  .hotel-auctions-table {
+    min-width: 1000px;
+  }
+  
+  .hotel-header-title h1 {
+    font-size: 26px;
+  }
+  
+  .hotel-admin-new-auction-btn {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+}
+
+/* Tablet (992px) */
+@media (max-width: 992px) and (min-width: 769px) {
+  .hotel-admin-header {
+    padding: 20px 24px;
+  }
+  
+  .hotel-auctions-table-section {
+    padding: 20px 24px;
+  }
+  
+  .admin-search-container {
+    width: 200px;
+  }
+  
+  .hotel-auctions-table {
+    min-width: 950px;
+    font-size: 12px;
+  }
+  
+  .hotel-auctions-table thead th {
+    padding: 12px 8px;
+    font-size: 10px;
+  }
+  
+  .hotel-auctions-table tbody td {
+    padding: 12px 8px;
+  }
+  
+  .hotel-header-title h1 {
+    font-size: 24px;
+  }
+  
+  .hotel-admin-new-auction-btn {
+    padding: 10px 14px;
+    font-size: 12px;
+    min-width: 120px;
+  }
+}
+
+/* Mobile Large (768px) */
+@media (max-width: 768px) {
+  .hotel-admin-header {
+    padding: 20px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+  
+  /* First row: Title and Create Button */
+  .hotel-admin-header > .hotel-header-title,
+  .hotel-admin-header > .hotel-mobile-header-actions {
+    display: flex !important;
+    width: 100%;
+  }
+  
+  .hotel-admin-header > .hotel-header-title {
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0;
+  }
+  
+  .hotel-admin-header > .hotel-mobile-header-actions {
+    align-self: flex-end;
+    margin-top: -40px; /* Align with header */
+  }
+  
+  .hotel-header-title h1 {
+    font-size: 24px;
+  }
+  
+  .hotel-header-title p {
+    font-size: 14px;
+  }
+  
+  /* FIXED: Align search bar with title text */
+  .hotel-mobile-search-in-header {
+    display: block !important;
+    width: 70%; /* Reduced from 100% to 70% */
+    max-width: 280px; /* Added maximum width */
+    margin-top: 16px;
+    margin-left: 0; /* Changed from auto to 0 - align with left edge */
+    margin-right: auto;
+  }
+  
+  .hotel-mobile-search-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .hotel-mobile-search-input {
+    width: 100%;
+    padding: 10px 16px 10px 42px; /* Reduced padding */
+    border: 1.5px solid #e2e8f0;
+    border-radius: 10px; /* Slightly smaller border radius */
+    font-size: 14px; /* Reduced font size */
+    background: #f8fafc;
+    transition: all 0.2s ease;
+    outline: none;
+  }
+  
+  .hotel-mobile-search-icon {
+    position: absolute;
+    left: 14px; /* Adjusted for smaller padding */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    z-index: 1;
+    width: 16px; /* Smaller icon */
+    height: 16px;
+  }
+}
+
+/* Mobile Medium (480px) */
+@media (max-width: 480px) {
+  .hotel-admin-header {
+    padding: 16px 12px;
+  }
+  
+  .hotel-header-title h1 {
+    font-size: 20px;
+  }
+  
+  .hotel-header-title p {
+    font-size: 12px;
+  }
+  
+  /* FIXED: Further reduced search bar width for smaller screens */
+  .hotel-mobile-search-in-header {
+    width: 60%; /* Further reduced from 70% to 60% */
+    max-width: 240px; /* Reduced maximum width */
+    margin-top: 12px;
+    margin-left: 0; /* Keep left alignment */
+    margin-right: auto;
+  }
+  
+  .hotel-mobile-search-input {
+    padding: 8px 14px 8px 38px; /* Further reduced padding */
+    font-size: 13px; /* Smaller font size */
+    border-radius: 8px; /* Smaller border radius */
+  }
+  
+  .hotel-mobile-search-icon {
+    left: 12px; /* Adjusted for smaller padding */
+    width: 14px; /* Even smaller icon */
+    height: 14px;
+  }
+}
+
+/* Mobile Small (360px) */
+@media (max-width: 360px) {
+  .hotel-admin-header {
+    padding: 12px 8px;
+  }
+  
+  .hotel-header-title h1 {
+    font-size: 18px;
+  }
+  
+  /* FIXED: Minimum search bar width for very small screens */
+  .hotel-mobile-search-in-header {
+    width: 50%; /* Minimum width for very small screens */
+    max-width: 200px; /* Further reduced maximum width */
+    margin-top: 10px;
+    margin-left: 0; /* Keep left alignment */
+    margin-right: auto;
+  }
+  
+  .hotel-mobile-search-input {
+    padding: 6px 12px 6px 34px; /* Minimal padding */
+    font-size: 12px; /* Smallest font size */
+    border-radius: 6px; /* Smallest border radius */
+  }
+  
+  .hotel-mobile-search-icon {
+    left: 10px; /* Adjusted for minimal padding */
+    width: 12px; /* Smallest icon */
+    height: 12px;
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .hotel-action-btn {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 12px;
+  }
+  
+  .search-input,
+  .hotel-mobile-search-input {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  .hotel-floating-action-btn {
+    bottom: 20px;
+    right: 20px;
+    width: 56px;
+    height: 56px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .hotel-mobile-only,
+  .hotel-floating-action-btn,
+  .hotel-action-buttons,
+  .hotel-mobile-search-in-header {
+    display: none !important;
+  }
+  
+  .hotel-auctions-table-section {
+    padding: 0;
+  }
+  
+  .hotel-table-container {
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+  
+  .hotel-auctions-table {
+    font-size: 10px;
+  }
+}
+
+/* ========================================
+   MOBILE SEARCH BAR WIDTH ADJUSTMENTS
+   ======================================== */
+
+/* Mobile Large (768px) */
+@media (max-width: 768px) {
+  .hotel-admin-header {
+    padding: 20px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+  
+  /* First row: Title and Create Button */
+  .hotel-admin-header > .hotel-header-title,
+  .hotel-admin-header > .hotel-mobile-header-actions {
+    display: flex !important;
+    width: 100%;
+  }
+  
+  .hotel-admin-header > .hotel-header-title {
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0;
+  }
+  
+  .hotel-admin-header > .hotel-mobile-header-actions {
+    align-self: flex-end;
+    margin-top: -40px; /* Align with header */
+  }
+  
+  .hotel-header-title h1 {
+    font-size: 24px;
+  }
+  
+  .hotel-header-title p {
+    font-size: 14px;
+  }
+  
+  /* UPDATED: Reduced search bar width */
+  .hotel-mobile-search-in-header {
+    display: block !important;
+    width: 70%; /* Reduced from 100% to 70% */
+    max-width: 280px; /* Added maximum width */
+    margin-top: 16px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .hotel-mobile-search-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .hotel-mobile-search-input {
+    width: 100%;
+    padding: 10px 16px 10px 42px; /* Reduced padding */
+    border: 1.5px solid #e2e8f0;
+    border-radius: 10px; /* Slightly smaller border radius */
+    font-size: 14px; /* Reduced font size */
+    background: #f8fafc;
+    transition: all 0.2s ease;
+    outline: none;
+  }
+  
+  .hotel-mobile-search-icon {
+    position: absolute;
+    left: 14px; /* Adjusted for smaller padding */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    z-index: 1;
+    width: 16px; /* Smaller icon */
+    height: 16px;
+  }
+  
+  /* Rest of mobile styles... */
+  .hotel-desktop-only {
+    display: none !important;
+  }
+  
+  .hotel-mobile-only {
+    display: flex !important;
+  }
+  
+  .hotel-mobile-header-actions {
+    display: flex !important;
+  }
+  
+  .hotel-floating-action-btn {
+    display: flex !important;
+  }
+  
+  .hotel-auctions-table-section {
+    padding: 16px 12px;
+    margin-bottom: 100px;
+  }
+  
+  .hotel-table-container {
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hotel-auctions-table {
+    font-size: 12px;
+    min-width: 800px;
+  }
+  
+  .hotel-auctions-table thead th {
+    padding: 12px 6px;
+    font-size: 10px;
+  }
+  
+  .hotel-auctions-table tbody td {
+    padding: 12px 6px;
+  }
+  
+  .hotel-current-bid {
+    font-size: 13px;
+  }
+  
+  .hotel-action-buttons {
+    gap: 6px;
+  }
+  
+  .hotel-action-btn {
+    padding: 6px;
+    border-radius: 6px;
+    width: 28px;
+    height: 28px;
+  }
+  
+  .hotel-action-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+
+/* Mobile Large (768px) */
+@media (max-width: 768px) {
+  .hotel-admin-header {
+    padding: 20px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+  
+  /* First row: Title and Create Button */
+  .hotel-admin-header > .hotel-header-title,
+  .hotel-admin-header > .hotel-mobile-header-actions {
+    display: flex !important;
+    width: 100%;
+  }
+  
+  .hotel-admin-header > .hotel-header-title {
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0;
+  }
+  
+  .hotel-admin-header > .hotel-mobile-header-actions {
+    align-self: flex-end;
+    margin-top: -40px; /* Align with header */
+  }
+  
+  .hotel-header-title h1 {
+    font-size: 24px;
+    font-weight: 600;
+  }
+  
+  .hotel-header-title p {
+    font-size: 14px;
+  }
+  
+  /* FIXED: Align search bar with title text */
+  .hotel-mobile-search-in-header {
+    display: block !important;
+    width: 70%; /* Reduced from 100% to 70% */
+    max-width: 280px; /* Added maximum width */
+    margin-top: 16px;
+    margin-left: 0; /* Changed from auto to 0 - align with left edge */
+    margin-right: auto;
+  }
+  
+  .hotel-mobile-search-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .hotel-mobile-search-input {
+    width: 100%;
+    padding: 10px 16px 10px 42px; /* Reduced padding */
+    border: 1.5px solid #e2e8f0;
+    border-radius: 10px; /* Slightly smaller border radius */
+    font-size: 14px; /* Reduced font size */
+    background: #f8fafc;
+    transition: all 0.2s ease;
+    outline: none;
+  }
+  
+  .hotel-mobile-search-icon {
+    position: absolute;
+    left: 14px; /* Adjusted for smaller padding */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    z-index: 1;
+    width: 16px; /* Smaller icon */
+    height: 16px;
+  }
+}

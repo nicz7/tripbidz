@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sora:wght@100..800&family=Yaldevi:wght@200..700&display=swap');
+
+:root {
+    --PrimaryColor: hsl(210, 100%, 33%);
+    --SecondaryColor: #FFAA85;
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(201, 33%, 16%);
+    --textColor: hsl(240, 4%, 36%);
+    --whiteColorDeam: hsl(0, 0%, 93%);
+    --greyText: rgb(190, 190, 190);
+    --inputColor: rgb(239, 239, 239);
+    --bodyColor: #1A4C78  ;
+    --cardBG: rgb(225, 225, 225);
+}
+
+.user-profile-container {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    background: #D9D9D9;
+    min-height: 120vh;
+}
+
+.user-sidebar {
+    background: #151A2D;
+    width: 250px;
+    position: absolute;
+    margin: 24px 0 0 24px;
+    top: 8rem;
+    border-radius: 16px;
+    height: calc(110vh - 32px);
+    transition: width 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.user-sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 20px;
+    padding-bottom: 120px;
+    transition: all 0.3s ease;
+}
+
+.user-sidebar.user-collapsed .user-sidebar-header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px;
+    gap: 10px;
+}
+
+.user-header-logo {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--whiteColor);
+    display: block;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+.user-sidebar.user-collapsed .user-header-logo {
+    font-size: 24px;
+    text-align: center;
+}
+
+.user-text-logo {
+    color: var(--SecondaryColor);
+    transition: all 0.3s ease;
+}
+
+.user-sidebar.user-collapsed .user-text-logo {
+    display: none;
+}
+
+.user-toggler {
+    height: 35px;
+    width: 35px;
+    background-color: var(--whiteColor);
+    border: none;
+    color: #151A2D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.user-toggler:hover {
+    background: #dde4fb;
+}
+
+.user-sharp-logo {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.user-sidebar.user-collapsed .user-toggler .user-sharp-logo {
+    transform: rotate(180deg);
+}
+
+.user-nav-icon {
+    font-size: 1.2rem;
+}
+
+.user-sidebar-nav .user-nav-list {
+    list-style: none;
+    display: flex;
+    gap: 8px;
+    padding: 0 15px;
+    margin-top: 10px;
+    flex-direction: column;
+    transform: translateY(15px);
+}
+
+.user-sidebar-nav .user-nav-link{
+    background: #151A2D;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    gap: 12px;
+    border-radius: 8px;
+    white-space: nowrap;
+    align-items: center;
+    padding: 12px;
+    transition: 0.4s ease;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.user-sidebar-nav .user-nav-link:hover {
+    background: #fff;
+    color: #151A2D;
+}
+
+.user-sidebar-nav .user-nav-item{
+    position: relative;
+}
+
+.user-sidebar.user-collapsed .user-sidebar-nav .user-nav-tooltip{
+    display: block;
+}
+
+.user-sidebar-nav .user-nav-tooltip{
+    position: absolute;
+    top: -10px;
+    opacity: 0;
+    display: none;
+    pointer-events: none;
+    left: calc(100% + 25px);
+    color: #151A2D;
+    padding: 6px 12px;
+    border-radius: 8px;
+    background: #fff;
+    white-space: nowrap;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transition: 0s;
+    z-index: 1;
+}
+
+.user-sidebar-nav .user-nav-item:hover .user-nav-tooltip{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(50%);
+    transition: 0.4s ease;
+}
+
+.user-sidebar-nav .user-secondary-nav {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+}
+
+.user-nav-item .user-nav-icon{
+    align-items: center;
+    justify-content: center;
+    padding: 4px 2px 4px 1px;
+    font-size: 1.5rem;
+}
+
+.user-sidebar.user-collapsed {
+    width: 80px;
+    z-index: 1;
+}
+
+.user-sidebar.user-collapsed .user-nav-label {
+    display: none;
+}
+
+/* Optional: round collapsed logo (if using an icon instead of text) */
+.user-collapsed-logo {
+    width: 40px;
+    height: 40px;
+    background-color: var(--SecondaryColor);
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.user-profile-main {
+  margin-left: 280px;
+  padding: 40px;
+  transition: margin-left 0.3s ease;
+}
+
+.user-sidebar.user-collapsed ~ .user-profile-main {
+  margin-left: 100px;
+}
+
+/*details-page*/
+
+.user-content {
+  background: #fff;
+  margin-top: 112px;
+  margin-left: -80px;
+  padding: 40px;
+  padding-left: 80px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  color: #151A2D;
+  height: calc(100vh - 32px);
+}
+
+.user-logout-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(21, 26, 45, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.user-logout-modal {
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px 80px;
+  max-width: 600px;
+  height: 390px;
+  text-align: left;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.user-logout-modal h3 {
+  font-size: 1.8rem;
+  letter-spacing: 1.5;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  color: #151A2D;
+  font-weight: 700;
+}
+
+.user-logout-modal p {
+  color: #000000;
+  margin-bottom: 35px;
+  font-size: 0.95rem;
+}
+
+.user-modal-actions {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  gap: 20px;
+}
+
+.user-modal-actions .user-btn {
+  padding: 10px 42px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.user-modal-actions .user-btn.user-cancel {
+  background: #F84343;
+  color: white;
+}
+
+.user-modal-actions .user-btn.user-cancel:hover {
+  background-color: #d43838;
+}
+
+.user-modal-actions .user-btn.user-logout {
+  background: var(--bodyColor);
+  color: white;
+}
+
+.user-modal-actions .user-btn.user-logout:hover {
+  background-color: #144062;
+}

@@ -1,0 +1,1186 @@
+/* ===== BASE STYLES ===== */
+.auction-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  line-height: 1.5;
+  color: #1e293b;
+}
+
+/* ===== RESPONSIVE UTILITIES ===== */
+.desktop-only {
+  display: flex;
+}
+
+.mobile-only {
+  display: none;
+}
+
+/* ===== HEADER STYLES ===== */
+.admin-header {
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 24px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-title h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 4px 0;
+  letter-spacing: -0.025em;
+}
+
+.header-title p {
+  font-size: 16px;
+  color: #64748b;
+  margin: 0;
+}
+
+/* ===== DESKTOP HEADER ACTIONS ===== */
+.admin-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.admin-search-container {
+  position: relative;
+  width: 320px;
+}
+
+.admin-search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  z-index: 1;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 16px 12px 48px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 14px;
+  background: #f8fafc;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: #3b82f6;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.search-input::placeholder {
+  color: #94a3b8;
+}
+
+.admin-new-auction-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: #1e293b;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.admin-new-auction-btn:hover {
+  background: #0f172a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.admin-new-auction-btn:active {
+  transform: translateY(0);
+}
+
+/* ===== MOBILE HEADER ACTIONS ===== */
+.mobile-header-actions {
+  display: none;
+}
+
+.mobile-menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  color: #1e293b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mobile-menu-btn:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+/* ===== MOBILE MENU OVERLAY ===== */
+.mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 380px;
+  height: 100vh;
+  background: #ffffff;
+  z-index: 1001;
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.15);
+  animation: slideInRight 0.3s ease-out;
+}
+
+.mobile-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.mobile-menu-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+}
+
+.mobile-menu-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mobile-menu-close:hover {
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+.mobile-menu-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ===== MOBILE SEARCH ===== */
+.mobile-search-container {
+  position: relative;
+}
+
+.mobile-search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  z-index: 1;
+}
+
+.mobile-search-input {
+  width: 100%;
+  padding: 14px 14px 14px 44px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 16px;
+  background: #f8fafc;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.mobile-search-input:focus {
+  border-color: #3b82f6;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* ===== MOBILE CREATE BUTTON ===== */
+.mobile-create-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 16px 20px;
+  background: #1e293b;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mobile-create-btn:hover {
+  background: #0f172a;
+  transform: translateY(-1px);
+}
+
+.mobile-create-btn:active {
+  transform: translateY(0);
+}
+
+/* ===== FLOATING ACTION BUTTON ===== */
+.floating-action-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 60px;
+  height: 60px;
+  background: #1e293b;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.floating-action-btn:hover {
+  background: #0f172a;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.floating-action-btn:active {
+  transform: translateY(0);
+}
+
+/* ===== TABLE SECTION ===== */
+.auctions-table-section {
+  padding: 32px 48px;
+}
+
+.table-container {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f3f4f6;
+  overflow: hidden;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.auctions-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  min-width: 1000px;
+}
+
+/* ===== TABLE HEADERS ===== */
+.auctions-table thead th {
+  background: #f8fafc;
+  padding: 24px 20px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 12px;
+  color: #374151;
+  border-bottom: 1px solid #e5e7eb;
+  white-space: nowrap;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* ===== TABLE CELLS ===== */
+.auctions-table tbody td {
+  padding: 24px 20px;
+  border-bottom: 1px solid #f3f4f6;
+  vertical-align: middle;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* ===== TABLE CONTENT STYLES ===== */
+.flight-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.current-bid {
+  font-weight: 700;
+  font-size: 16px;
+  color: #059669;
+  letter-spacing: -0.025em;
+}
+
+.status-badge {
+  padding: 8px 16px;
+  border-radius: 24px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.status-badge.active {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+.action-btn {
+  padding: 10px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+}
+
+.action-btn:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+  color: #374151;
+  transform: translateY(-1px);
+}
+
+.view-btn:hover {
+  background: #eff6ff;
+  border-color: #93c5fd;
+  color: #1d4ed8;
+}
+
+.settings-btn:hover {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+  color: #374151;
+}
+
+/* ===== ROW HOVER EFFECTS ===== */
+.auctions-table tbody tr {
+  transition: all 0.2s ease;
+}
+
+.auctions-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+/* ===== SCROLLBAR STYLING ===== */
+.table-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { 
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to { 
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* ===== DESKTOP SPECIFIC RULES ===== */
+@media (min-width: 769px) {
+  .mobile-only,
+  .mobile-header-actions,
+  .floating-action-btn {
+    display: none !important;
+  }
+  
+  .desktop-only,
+  .admin-header-actions {
+    display: flex !important;
+  }
+}
+
+/* ===== RESPONSIVE BREAKPOINTS ===== */
+
+/* Large Desktop (1400px+) */
+@media (min-width: 1400px) {
+  .admin-header {
+    padding: 48px 64px;
+  }
+  
+  .auctions-table-section {
+    padding: 40px 64px;
+  }
+  
+  .admin-search-container {
+    width: 380px;
+  }
+}
+
+/* Desktop (1200px) */
+@media (max-width: 1200px) {
+  .admin-header {
+    padding: 32px 32px;
+  }
+  
+  .auctions-table-section {
+    padding: 24px 32px;
+  }
+  
+  .admin-search-container {
+    width: 280px;
+  }
+  
+  .auctions-table {
+    min-width: 900px;
+  }
+}
+
+/* Tablet (992px) */
+@media (max-width: 992px) {
+  .admin-header {
+    padding: 24px 20px;
+  }
+  
+  .auctions-table-section {
+    padding: 20px;
+  }
+  
+  .admin-search-container {
+    width: 240px;
+  }
+  
+  .auctions-table {
+    min-width: 800px;
+    font-size: 13px;
+  }
+  
+  .auctions-table thead th {
+    padding: 16px 12px;
+    font-size: 11px;
+  }
+  
+  .auctions-table tbody td {
+    padding: 16px 12px;
+  }
+  
+  .current-bid {
+    font-size: 15px;
+  }
+}
+
+/* Mobile Large (768px) */
+@media (max-width: 768px) {
+  .admin-header {
+    padding: 20px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .header-title h1 {
+    font-size: 24px;
+  }
+  
+  .header-title p {
+    font-size: 14px;
+  }
+  
+  /* Hide desktop search and show mobile version */
+  .desktop-only {
+    display: none !important;
+  }
+  
+  .mobile-only {
+    display: flex !important;
+  }
+  
+  .mobile-header-actions {
+    display: flex !important;
+  }
+  
+  /* UPDATED: Reduced search bar width */
+  .mobile-search-in-header {
+    display: block !important;
+    width: 55%; /* Reduced from 70% to 55% */
+    max-width: 240px; /* Reduced from 280px to 240px */
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: auto;
+  }
+  
+  .mobile-search-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .mobile-search-input {
+    width: 100%;
+    padding: 10px 16px 10px 42px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 14px;
+    background: #f8fafc;
+    transition: all 0.2s ease;
+    outline: none;
+  }
+  
+  .mobile-search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    z-index: 1;
+    width: 16px;
+    height: 16px;
+  }
+  
+  .floating-action-btn {
+    display: flex !important;
+  }
+  
+  .auctions-table-section {
+    padding: 16px 12px;
+    margin-bottom: 100px;
+  }
+  
+  .table-container {
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .auctions-table {
+    font-size: 12px;
+    min-width: 700px;
+  }
+  
+  .auctions-table thead th {
+    padding: 12px 8px;
+    font-size: 10px;
+  }
+  
+  .auctions-table tbody td {
+    padding: 12px 8px;
+  }
+  
+  .current-bid {
+    font-size: 13px;
+  }
+  
+  .action-buttons {
+    gap: 6px;
+  }
+  
+  .action-btn {
+    padding: 6px;
+    border-radius: 6px;
+    width: 28px;
+    height: 28px;
+  }
+  
+  .action-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* Mobile Medium (480px) */
+@media (max-width: 480px) {
+  .admin-header {
+    padding: 16px 12px;
+  }
+  
+  .header-title h1 {
+    font-size: 20px;
+  }
+  
+  .header-title p {
+    font-size: 12px;
+  }
+  
+  /* UPDATED: Further reduced search bar for smaller screens */
+  .mobile-search-in-header {
+    width: 50%; /* Reduced from 60% to 50% */
+    max-width: 200px; /* Reduced from 240px to 200px */
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: auto;
+  }
+  
+  .mobile-search-input {
+    padding: 8px 14px 8px 38px;
+    font-size: 13px;
+    border-radius: 8px;
+  }
+  
+  .mobile-search-icon {
+    left: 12px;
+    width: 14px;
+    height: 14px;
+  }
+  
+  .auctions-table-section {
+    padding: 12px 8px;
+  }
+  
+  .auctions-table {
+    font-size: 11px;
+    min-width: 600px;
+  }
+  
+  .auctions-table thead th {
+    padding: 10px 6px;
+    font-size: 9px;
+  }
+  
+  .auctions-table tbody td {
+    padding: 10px 6px;
+  }
+  
+  .current-bid {
+    font-size: 12px;
+  }
+  
+  .status-badge {
+    padding: 3px 6px;
+    font-size: 8px;
+  }
+  
+  .action-btn {
+    width: 24px;
+    height: 24px;
+    padding: 4px;
+  }
+  
+  .action-btn svg {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+/* Mobile Small (360px) */
+@media (max-width: 360px) {
+  .admin-header {
+    padding: 12px 8px;
+  }
+  
+  .header-title h1 {
+    font-size: 18px;
+  }
+  
+  /* UPDATED: Minimum search bar width for very small screens */
+  .mobile-search-in-header {
+    width: 45%; /* Reduced from 50% to 45% */
+    max-width: 180px; /* Reduced from 200px to 180px */
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: auto;
+  }
+  
+  .mobile-search-input {
+    padding: 6px 12px 6px 34px;
+    font-size: 12px;
+    border-radius: 6px;
+  }
+  
+  .mobile-search-icon {
+    left: 10px;
+    width: 12px;
+    height: 12px;
+  }
+  
+  .auctions-table-section {
+    padding: 8px 4px;
+  }
+  
+  .auctions-table {
+    min-width: 550px;
+  }
+  
+  .mobile-menu {
+    max-width: 100%;
+  }
+  
+  .mobile-menu-content {
+    padding: 16px;
+  }
+}
+
+/* ========================================
+   REMOVE MOBILE MENU SEARCH (Optional)
+   ======================================== */
+
+/* Since we now have search in header, we can hide the mobile menu search */
+@media (max-width: 768px) {
+  .mobile-menu .mobile-search-container {
+    display: none; /* Hide search in mobile menu */
+  }
+  
+  .mobile-menu-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Keep only the create button in mobile menu */
+  .mobile-create-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    padding: 16px 20px;
+    background: #1e293b;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+}
+
+/* ========================================
+   TOUCH DEVICE OPTIMIZATIONS (Updated)
+   ======================================== */
+
+@media (hover: none) and (pointer: coarse) {
+  .mobile-search-input {
+    font-size: 16px !important; /* Prevent zoom on iOS */
+    min-height: 44px; /* Minimum touch target */
+  }
+  
+  .action-btn {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 12px;
+  }
+  
+  .mobile-menu-btn {
+    min-width: 48px;
+    min-height: 48px;
+    padding: 14px;
+  }
+  
+  .mobile-create-btn {
+    min-height: 52px;
+    padding: 18px 20px;
+  }
+  
+  .search-input,
+  .mobile-search-input {
+    font-size: 16px;
+  }
+  
+  .mobile-menu-close {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  
+  .floating-action-btn {
+    bottom: 20px;
+    right: 20px;
+    width: 56px;
+    height: 56px;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .mobile-menu {
+    animation: none;
+  }
+  
+  .mobile-overlay {
+    animation: none;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .mobile-menu,
+  .mobile-overlay,
+  .mobile-only,
+  .floating-action-btn,
+  .action-buttons {
+    display: none !important;
+  }
+  
+  .auctions-table-section {
+    padding: 0;
+  }
+  
+  .table-container {
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+  
+  .auctions-table {
+    font-size: 10px;
+  }
+}
+
+/* ========================================
+   MOBILE SEARCH BAR WIDTH REDUCTION
+   ======================================== */
+
+/* Mobile Large (768px) */
+@media (max-width: 768px) {
+  .admin-header {
+    padding: 20px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .header-title h1 {
+    font-size: 24px;
+  }
+  
+  .header-title p {
+    font-size: 14px;
+  }
+  
+  /* Hide desktop search and show mobile version */
+  .desktop-only {
+    display: none !important;
+  }
+  
+  .mobile-only {
+    display: flex !important;
+  }
+  
+  .mobile-header-actions {
+    display: flex !important;
+  }
+  
+  /* UPDATED: Reduced search bar width */
+  .mobile-search-in-header {
+    display: block !important;
+    width: 55%; /* Reduced from 70% to 55% */
+    max-width: 240px; /* Reduced from 280px to 240px */
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: auto;
+  }
+  
+  .mobile-search-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .mobile-search-input {
+    width: 100%;
+    padding: 10px 16px 10px 42px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 14px;
+    background: #f8fafc;
+    transition: all 0.2s ease;
+    outline: none;
+  }
+  
+  .mobile-search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    z-index: 1;
+    width: 16px;
+    height: 16px;
+  }
+  
+  /* Rest of your existing mobile styles... */
+  .floating-action-btn {
+    display: flex !important;
+  }
+  
+  .auctions-table-section {
+    padding: 16px 12px;
+    margin-bottom: 100px;
+  }
+  
+  .table-container {
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .auctions-table {
+    font-size: 12px;
+    min-width: 700px;
+  }
+  
+  .auctions-table thead th {
+    padding: 12px 8px;
+    font-size: 10px;
+  }
+  
+  .auctions-table tbody td {
+    padding: 12px 8px;
+  }
+  
+  .current-bid {
+    font-size: 13px;
+  }
+  
+  .action-buttons {
+    gap: 6px;
+  }
+  
+  .action-btn {
+    padding: 6px;
+    border-radius: 6px;
+    width: 28px;
+    height: 28px;
+  }
+  
+  .action-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* Mobile Medium (480px) */
+@media (max-width: 480px) {
+  .admin-header {
+    padding: 16px 12px;
+  }
+  
+  .header-title h1 {
+    font-size: 20px;
+  }
+  
+  .header-title p {
+    font-size: 12px;
+  }
+  
+  /* UPDATED: Further reduced search bar for smaller screens */
+  .mobile-search-in-header {
+    width: 50%; /* Reduced from 60% to 50% */
+    max-width: 200px; /* Reduced from 240px to 200px */
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: auto;
+  }
+  
+  .mobile-search-input {
+    padding: 8px 14px 8px 38px;
+    font-size: 13px;
+    border-radius: 8px;
+  }
+  
+  .mobile-search-icon {
+    left: 12px;
+    width: 14px;
+    height: 14px;
+  }
+  
+  /* Rest of your existing styles... */
+  .auctions-table-section {
+    padding: 12px 8px;
+  }
+  
+  .auctions-table {
+    font-size: 11px;
+    min-width: 600px;
+  }
+  
+  .auctions-table thead th {
+    padding: 10px 6px;
+    font-size: 9px;
+  }
+  
+  .auctions-table tbody td {
+    padding: 10px 6px;
+  }
+  
+  .current-bid {
+    font-size: 12px;
+  }
+  
+  .status-badge {
+    padding: 3px 6px;
+    font-size: 8px;
+  }
+  
+  .action-btn {
+    width: 24px;
+    height: 24px;
+    padding: 4px;
+  }
+  
+  .action-btn svg {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+/* Mobile Small (360px) */
+@media (max-width: 360px) {
+  .admin-header {
+    padding: 12px 8px;
+  }
+  
+  .header-title h1 {
+    font-size: 18px;
+  }
+  
+  /* UPDATED: Minimum search bar width for very small screens */
+  .mobile-search-in-header {
+    width: 45%; /* Reduced from 50% to 45% */
+    max-width: 180px; /* Reduced from 200px to 180px */
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: auto;
+  }
+  
+  .mobile-search-input {
+    padding: 6px 12px 6px 34px;
+    font-size: 12px;
+    border-radius: 6px;
+  }
+  
+  .mobile-search-icon {
+    left: 10px;
+    width: 12px;
+    height: 12px;
+  }
+  
+  /* Rest of your existing styles... */
+  .auctions-table-section {
+    padding: 8px 4px;
+  }
+  
+  .auctions-table {
+    min-width: 550px;
+  }
+  
+  .mobile-menu {
+    max-width: 100%;
+  }
+  
+  .mobile-menu-content {
+    padding: 16px;
+  }
+}
+
+/* ========================================
+   ADDITIONAL COMPACT OPTIONS
+   ======================================== */
+
+/* Extra compact search bar option */
+.mobile-search-compact {
+  width: 40% !important;
+  max-width: 160px !important;
+}
+
+.mobile-search-compact .mobile-search-input {
+  padding: 6px 12px 6px 32px !important;
+  font-size: 12px !important;
+  border-radius: 6px !important;
+}
+
+.mobile-search-compact .mobile-search-icon {
+  left: 10px !important;
+  width: 12px !important;
+  height: 12px !important;
+}
+
+/* Mini search bar option */
+.mobile-search-mini {
+  width: 35% !important;
+  max-width: 140px !important;
+}
+
+.mobile-search-mini .mobile-search-input {
+  padding: 5px 10px 5px 30px !important;
+  font-size: 11px !important;
+  border-radius: 5px !important;
+}
+
+.mobile-search-mini .mobile-search-icon {
+  left: 8px !important;
+  width: 10px !important;
+  height: 10px !important;
+}
