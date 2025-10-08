@@ -1,0 +1,87 @@
+:root{
+    --PrimaryColor: hsl(210, 100%, 33%);
+    --SecondaryColor: #FFAA85;
+    --gradientColor: linear-gradient(to right, hsl(210, 100%, 33%), hsl(187, 85%, 45%));
+    --whiteColor: #F0EFEF;
+    --blackColor: #252525;
+    --textColor: hsl(240, 4%, 36%);
+    --whiteColorDeam: hsl(0, 0%, 93%);
+    --greyText: rgb(190, 190, 190);
+    --inputColor: rgb(239, 239, 239);
+    --bodyColor: #123458;
+    --cardBG: rgb(225, 225, 225);
+}
+
+
+.about-container{
+    background: #F3F3F3;
+    min-height: 75vh;
+    padding: 0;
+    margin: 0 auto;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+.about-title{
+    text-align: center;
+    font-weight: bold;
+    font-size: 2.6rem;
+    padding-top: 30px;
+    margin-bottom: 40px;
+    letter-spacing: -1px;
+    color: #232323;
+}
+
+.about-brand-accent{
+    color: var(--SecondaryColor);
+}
+
+.about-content{
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.about-section{
+    margin-bottom: 50px;
+}
+
+.about-section-title{
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+    color: #232323;
+}
+
+.about-section-text{
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #232323;
+    line-height: 1.6;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+
+  .about-title {
+    font-size: 1.8rem;
+    margin-bottom: 28px;
+  }
+
+  .about-content {
+    max-width: 98%;
+    padding: 0 2vw;
+  }
+
+  .about-section-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .about-section-text {
+    font-size: 0.97rem;
+    line-height: 1.5;
+  }
+
+  .about-section {
+    margin-bottom: 30px;
+  }
+}
